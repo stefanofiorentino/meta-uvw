@@ -4,7 +4,7 @@ DEPENDS = ""
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e945c29a02adba41f817317921f056ca"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-${PV}:"
 
 SRCREV = "v2.5.0_libuv-v1.37"
 SRC_URI = "git://github.com/skypjack/uvw.git"
