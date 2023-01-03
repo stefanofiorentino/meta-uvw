@@ -5,9 +5,8 @@ BUGTRACKER = "https://github.com/skypjack/uvw/issues"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e945c29a02adba41f817317921f056ca"
 
-SRCREV = "v2.12.1_libuv_v1.44"
-SRC_URI = "git://github.com/skypjack/uvw.git;protocol=https"
-UPSTREAM_CHECK_GITTAGREGEX = "v(?P<pver>\d+(\.\d+)+)"
+SRCREV = "3db9e8f75a4351325e1ea00e17586af2b00cf1ea"
+SRC_URI = "git://github.com/skypjack/uvw.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
 
