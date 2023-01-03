@@ -12,7 +12,7 @@ S = "${WORKDIR}/git"
 
 FILES_${PN}-dev = "${libdir}/* ${includedir}"
 
-EXTRA_OECMAKE += "-D BUILD_UVW_LIBS=ON"
+EXTRA_OECMAKE += "-D BUILD_UVW_LIBS:BOOL=ON -D FIND_LIBUV:BOOL=ON"
 
 inherit cmake
 
