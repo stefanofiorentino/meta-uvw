@@ -23,4 +23,6 @@ EXTRA_OECMAKE += " \
 
 inherit cmake
 
+FILES_${PN}-dev = "libuvw.so"
+
 BBCLASSEXTEND = "native"
