@@ -12,11 +12,8 @@ SRC_URI = "git://github.com/stefanofiorentino/uvw_static_lib_client.git;branch=m
 
 S = "${WORKDIR}/git"
 
-FILES_${PN}-dev = "${libdir}/* ${includedir}"
-
 EXTRA_OECMAKE += " \
-    -D BUILD_UVW_LIB:BOOL=ON \
-    -D FIND_LIBUV:BOOL=ON \
+    -D FETCH_UVW:BOOL=OFF \
     -D FETCH_LIBUV:BOOL=OFF \
     "
 
