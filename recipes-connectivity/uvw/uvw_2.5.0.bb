@@ -6,7 +6,6 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=39169c9b4e3b62dd392950780576c55e"
 
 DEPENDS = "libuv"
-RDEPENDS_${PN} = "libuv-dev"
 
 SRCREV = "3db9e8f75a4351325e1ea00e17586af2b00cf1ea"
 SRC_URI = "git://github.com/skypjack/uvw.git;branch=master;protocol=https"
@@ -16,13 +15,11 @@ S = "${WORKDIR}/git"
 FILES_${PN}-dev = "${libdir}/* ${includedir}"
 
 EXTRA_OECMAKE += " \
-    -D BUILD_UVW_SHARED_LIB:BOOL=ON \
+    -D BUILD_UVW_LIB:BOOL=ON \
     -D FIND_LIBUV:BOOL=ON \
     -D FETCH_LIBUV:BOOL=OFF \
     "
 
 inherit cmake
-
-FILES_${PN}-dev = "libuvw.so"
 
 BBCLASSEXTEND = "native"
