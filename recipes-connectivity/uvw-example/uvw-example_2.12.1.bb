@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=39169c9b4e3b62dd392950780576c55e"
 
 DEPENDS = "uvw"
 
-SRCREV = "6c1359c8eb953145e42adead00e70b5649d4b9c0"
+SRCREV = "85a20483fcc12fd520f3e62c968e9bffdd20fa82"
 SRC_URI = "git://github.com/stefanofiorentino/uvw_static_lib_client.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
