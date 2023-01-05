@@ -12,14 +12,10 @@ SRC_URI = "git://github.com/skypjack/uvw.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
 
-FILES_${PN}-dev = "${libdir}/* ${includedir}"
+inherit cmake pkgconfig
 
-EXTRA_OECMAKE += " \
-    -D BUILD_UVW_LIB:BOOL=ON \
-    -D FIND_LIBUV:BOOL=ON \
-    -D FETCH_LIBUV:BOOL=OFF \
-    "
-
-inherit cmake
+PACKAGECONFIG ?= "shared"
+PACKAGECONFIG[shared] = "-DBUILD_UVW_SHARED_LIB=ON,-DBUILD_UVW_SHARED_LIB=OFF,"
+PACKAGECONFIG[libuv] = "-DFETCH_LIBUV=ON,-DFETCH_LIBUV=OFF,"
 
 BBCLASSEXTEND = "native"

@@ -7,14 +7,12 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=39169c9b4e3b62dd392950780576c55e"
 
 DEPENDS = "uvw"
 
-SRCREV = "85a20483fcc12fd520f3e62c968e9bffdd20fa82"
+SRCREV = "8415c60329494e82a2967041dbbe37e83717301d"
 SRC_URI = "git://github.com/stefanofiorentino/uvw_static_lib_client.git;branch=master;protocol=https"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " \
-    -D FETCH_UVW:BOOL=OFF \
-    -D FETCH_LIBUV:BOOL=OFF \
-    "
+inherit cmake pkgconfig
 
-inherit cmake
+PACKAGECONFIG ?= ""
+PACKAGECONFIG[fetch] = "-DFETCH_UVW=ON -DFETCH_LIBUV=ON,-DFETCH_UVW=OFF -DFETCH_LIBUV=OFF,"
