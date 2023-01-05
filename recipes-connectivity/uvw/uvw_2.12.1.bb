@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=39169c9b4e3b62dd392950780576c55e"
 
 DEPENDS = "libuv"
 
-SRCREV = "3db9e8f75a4351325e1ea00e17586af2b00cf1ea"
-SRC_URI = "git://github.com/skypjack/uvw.git;branch=master;protocol=https"
+SRCREV = "7713f637f2d956a5697f9fa6eb9abd562864fe3e"
+SRC_URI = "git://github.com/stefanofiorentino/uvw.git;branch=issue-268;protocol=https"
 
 S = "${WORKDIR}/git"
 
@@ -17,8 +17,5 @@ inherit cmake pkgconfig
 PACKAGECONFIG ?= "shared"
 PACKAGECONFIG[shared] = "-DBUILD_UVW_SHARED_LIB=ON,-DBUILD_UVW_SHARED_LIB=OFF,"
 PACKAGECONFIG[libuv] = "-DFETCH_LIBUV=ON,-DFETCH_LIBUV=OFF,"
-
-SOLIBS = ".so"
-FILES_SOLIBSDEV = ""
 
 BBCLASSEXTEND = "native"
