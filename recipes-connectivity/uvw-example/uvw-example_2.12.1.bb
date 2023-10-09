@@ -15,4 +15,9 @@ S = "${WORKDIR}/git"
 inherit cmake pkgconfig
 
 PACKAGECONFIG ?= ""
-PACKAGECONFIG[fetch] = "-DFETCH_UVW=ON -DFETCH_LIBUV=ON,-DFETCH_UVW=OFF -DFETCH_LIBUV=OFF,"
+PACKAGECONFIG[fetch] = "-DFETCH_UVW:BOOL=TRUE,-DFETCH_UVW:BOOL=FALSE,"
+
+# Specify any options you want to pass to cmake using EXTRA_OECMAKE:
+EXTRA_OECMAKE = " \
+    -DFETCH_LIBUV:BOOL=FALSE \
+"
